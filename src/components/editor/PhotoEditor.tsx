@@ -107,20 +107,18 @@ export default function PhotoEditor() {
   };
 
   const downloadImage = (image: string) => {
-    const link = document.createElement("a");
-    link.href = image;
-
-    // 📅 날짜 만들기
     const now = new Date();
     const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(
       2,
       "0",
     )}-${String(now.getDate()).padStart(2, "0")}`;
 
-    // 🔤 필터명 정리 (공백 제거 + 소문자)
+    const link = document.createElement("a");
+    link.href = image;
     link.download = `☆${date}_#meangirls☆.png`;
-
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   const handleDownload = async () => {
@@ -131,6 +129,7 @@ export default function PhotoEditor() {
     const canvas = await html2canvas(photoAreaRef.current, {
       backgroundColor: null,
       useCORS: true,
+      allowTaint: true,
       scale: 2,
     });
 
@@ -176,6 +175,7 @@ export default function PhotoEditor() {
                   alt="editing photo"
                   className="absolute inset-0 h-full w-full object-cover"
                   draggable={false}
+                  crossOrigin="anonymous"
                 />
               )}
 
@@ -222,6 +222,7 @@ export default function PhotoEditor() {
                       width: `${item.sticker.size ?? 12}%`,
                     }}
                     draggable={false}
+                    crossOrigin="anonymous"
                   />
                 );
               })}
