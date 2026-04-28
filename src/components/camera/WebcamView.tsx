@@ -60,7 +60,7 @@ export default function WebcamView() {
     <BackgroundUI>
       <div
         className="
-          translate-x-[2vw] translate-y-[7vh]
+          translate-x-[2vw] translate-y-[5vh]
           max-md:translate-y-[0vh]
           max-md:translate-x-0
         "
