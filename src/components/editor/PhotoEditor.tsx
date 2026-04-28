@@ -190,24 +190,34 @@ export default function PhotoEditor() {
                   )}`;
 
                   return (
-                    <div
+                    <svg
                       key={item.id}
-                      className="
-    absolute z-30
-    select-none
-    text-[clamp(7px,0.9vw,10px)]
-    text-yellow-500
-    font-mono
-  "
+                      className="absolute z-30 select-none"
                       style={{
-                        right: "5%",
-                        bottom: "5%",
-                        textShadow: "1px 1px 2px rgba(0,0,0,0.95)",
-                        letterSpacing: "0.5px",
+                        right: "13%",
+                        bottom: "3%",
+                        width: "clamp(90px, 16vw, 140px)",
+                        height: "auto",
                       }}
+                      viewBox="0 0 220 28"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      {dateText}
-                    </div>
+                      <text
+                        x="218"
+                        y="20"
+                        textAnchor="end"
+                        fontFamily="monospace"
+                        fontSize="18"
+                        fontWeight="700"
+                        letterSpacing="1"
+                        fill="#d6a300"
+                        stroke="rgba(0,0,0,0.85)"
+                        strokeWidth="1.4"
+                        paintOrder="stroke fill"
+                      >
+                        {dateText}
+                      </text>
+                    </svg>
                   );
                 }
 
