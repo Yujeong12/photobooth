@@ -129,7 +129,7 @@ export default function PhotoEditor() {
     const canvas = await html2canvas(photoAreaRef.current, {
       backgroundColor: null,
       useCORS: true,
-      allowTaint: true,
+      //   allowTaint: true,
       scale: 2,
     });
 
