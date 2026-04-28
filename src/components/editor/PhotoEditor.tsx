@@ -191,19 +191,19 @@ export default function PhotoEditor() {
 
                   return (
                     <div
+                      key={item.id}
                       className="
-                    absolute z-30 
-                    select-none
-                    text-[clamp(8px,0.9vw,12px)]
-                    text-yellow-400
-                    tracking-wider
-                    drop-shadow-[0_2px_3px_rgba(0,0,0,1),0_0_6px_rgba(0,0,0,0.9)]
-                  "
+    absolute z-30
+    select-none
+    text-[clamp(7px,0.9vw,10px)]
+    text-yellow-500
+    font-mono
+  "
                       style={{
-                        fontFamily: "'Press Start 2P', monospace",
+                        right: "5%",
+                        bottom: "5%",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.95)",
                         letterSpacing: "0.5px",
-                        right: "13%",
-                        bottom: "3%",
                       }}
                     >
                       {dateText}
